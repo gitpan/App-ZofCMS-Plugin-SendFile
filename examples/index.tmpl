@@ -1,0 +1,11 @@
+{
+    body => \'index.tmpl',
+    title => '',
+
+    plugins => [
+        { SendFile => 2000 },
+    ],
+
+    plug_send_file => [ '../zcms_site/config.txt', undef, undef, 'LOL.jpg' ],
+
+}
