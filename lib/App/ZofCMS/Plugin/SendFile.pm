@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::SendFile;
 use warnings;
 use strict;
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 use MIME::Types;
 use File::Spec;
@@ -41,7 +41,7 @@ sub process {
     open my $fh, '<', $file
         or do { $t->{t}{plug_send_file_error} = $!; return; };
 
-    my $type = MIME::Types->new->mimeTypeOf($file)
+    $type = MIME::Types->new->mimeTypeOf($file)
         unless defined $type;
 
     $type = 'application/octet-stream'
@@ -119,8 +119,18 @@ make sure that all the required plugins had their chance to execute BEFORE this 
         'LOL.txt',                  # optional to set filename instead of using same as original
     ],
 
-B<Mandatory>. Takes either a string or an arrayref as a value, can be specified in either
-ZofCMS Template or Main Config File; if set in both, the value in ZofCMS Template is used.
+    plug_send_file => sub {
+        my ( $t, $q, $conf ) = @_;
+        return 'foo.txt';
+    },
+
+B<Mandatory>. Takes either a string, subref or an arrayref as a value, can be specified in
+either ZofCMS Template or Main Config File; if set in both, the value in ZofCMS Template is
+used.
+
+When set to a subref, the sub will be executed and its return value will be assigned to the key; returning C<undef> will stop the plugin from execution. The C<@_> will contain
+(in that order): ZofCMS Template hashref, query parameters hashref, L<App::ZofCMS::Config>
+object.
 
 When set to a string it's the same as setting to an arrayref with just one value in it.
 

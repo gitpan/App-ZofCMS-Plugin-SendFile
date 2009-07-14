@@ -1,6 +1,6 @@
 ---
 name: App-ZofCMS-Plugin-SendFile
-version: 0.0101
+version: 0.0102
 author:
   - "'Zoffix <'zoffix@cpan.org'>"
 abstract: plugin for flexible sending of files as well as files outside of web-accessible directory
@@ -15,8 +15,8 @@ build_requires:
 provides:
   App::ZofCMS::Plugin::SendFile:
     file: lib/App/ZofCMS/Plugin/SendFile.pm
-    version: 0.0101
-generated_by: Module::Build version 0.33
+    version: 0.0102
+generated_by: Module::Build version 0.280801
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
