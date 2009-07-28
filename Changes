@@ -1,5 +1,8 @@
 Revision history for App-ZofCMS-Plugin-SendFile
 
+0.0103  July 27, 2009
+        Added my links
+
 0.0102  July 14, 2009
         Updated docs to include the fact that the plugin key accepts a subref;
         Fixed duplicate `my` declaration that was causing a warning

@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::SendFile;
 use warnings;
 use strict;
 
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 
 use MIME::Types;
 use File::Spec;
@@ -206,6 +206,7 @@ it will use C<application/octet-stream>
 =head1 AUTHOR
 
 'Zoffix, C<< <'zoffix at cpan.org'> >>
+(L<http://haslayout.net/>, L<http://zoffix.com/>, L<http://zofdesign.com/>)
 
 =head1 BUGS
 
