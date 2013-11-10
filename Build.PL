@@ -16,7 +16,9 @@ my $builder = Module::Build->new(
     requires => {
         'MIME::Types' => 1.27,
         'File::Spec'  => 0,
+        'perl' => '5.006',
     },
+    configure_requires => { 'Module::Build' => 0 },
     add_to_cleanup      => [ 'App-ZofCMS-Plugin-SendFile-*' ],
     create_makefile_pl => 'traditional',
 );
